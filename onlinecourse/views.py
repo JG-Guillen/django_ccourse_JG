@@ -146,7 +146,7 @@ def show_exam_result(request, course_id, submission_id):
     submission = get_object_or_404(Submission, pk=submission_id)
     selected_choices=submission.choices.all()
     for selected in selected_choices:
-        if selected.choice_answer == True:
+        if selected.is_correct == True:
             total_score += selected.question.grade
     context['course'] = course
     context['selected_ids'] = selected_choices

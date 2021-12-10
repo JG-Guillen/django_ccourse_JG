@@ -128,7 +128,7 @@ class Question(models.Model):
 class Choice(models.Model):
     question = models.ForeignKey(Question, null=True, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=500, default="question text")
-    choice_answer = models.BooleanField(default=0)
+    is_correct = models.BooleanField(default=0)
 # <HINT> The submission model
 # One enrollment could have multiple submission
 # One submission could have multiple choices
