@@ -64,10 +64,18 @@
                 <div>
                     <span class="text-success">Correct answer: {{choice.choice_text}}</span>
                 </div>
+                {% elif choice in selected_ids and choice.is_correct == False %}
+                <div>
+                    <span class="text-danger">Bad answer: {{choice.choice_text}}</span>
+                </div>
+                {% elif choice.is_correct == True %}
+                <div>
+                    <span class="text-warning">Not selected: {{choice.choice_text}}</span>
+                </div>
                 {% else %}
                 <div>
                     {{choice.choice_text}}
-                   <div>
+                <div>
                 {% endif %}               
                 {% endfor %}
             </div>
