@@ -60,7 +60,7 @@
                     <h5>{{ question.question_text}}</h5>
                 </div>
                 {% for choice in question.choice_set.all %}
-                {% if choice.is_correct == True %}
+                {% if choice in selected_ids and choice.is_correct == True %}
                 <div>
                     <span class="text-success">Correct answer: {{choice.choice_text}}</span>
                 </div>
